@@ -15,19 +15,6 @@ Aplicación web de trivia que genera preguntas aleatorias usando la API de Googl
 - Navegador web moderno
 - Clave API de Google Gemini
 
-## Instalación
-
-1. Clona el repositorio:
-```bash
-git clone https://github.com/TU_USUARIO/trivia-preguntas.git
-```
-
-2. Abre `preguntas.html` en tu navegador
-
-3. Agrega tu API key en `js/scriptv2.js`:
-```javascript
-const API_KEY = "TU_API_KEY_AQUI";
-```
 
 ## Estructura
 

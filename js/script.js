@@ -16,11 +16,10 @@ function desplegarContadores() {
     document.getElementById('incorrectas').textContent = incorrectas;
 }
 
-// Función para guardar en localStorage
 function guardarContadores() {
     localStorage.setItem('triviaContadores', JSON.stringify({
         correctas: correctas,
-        incorrectas: inorrectas
+        incorrectas: incorrectas
     }));
 }
 
@@ -102,12 +101,12 @@ async function generarAPI() {
             console.log(questionData);
             return questionData;
         } else {
-            console.log("No se pudo extraer el texto de la respuesta");
+            console.log("No se pudo extraer el texto de la respuesta.");
         }
 
     } catch (error) {
         console.error("Hubo un error en la petición:", error);
-        document.getElementById('question').textContent = 'Error al cargar la pregunta';
+        document.getElementById('question').textContent = 'Error al cargar la pregunta. Por favor, revisa la clave API o la consola.';
         return null;
     }
 }
@@ -149,7 +148,7 @@ function verificarRespuesta(opcionSeleccionada, botonSeleccionado) {
         
         const explicacion = document.createElement('div');
         explicacion.className = 'alert alert-success mt-3';
-        explicacion.innerHTML = `<strong>Correcto</strong> ${preguntaActual.explanation}`;
+        explicacion.innerHTML = `<strong>¡Correcto!</strong> ${preguntaActual.explanation}`;
         document.getElementById('question-container').appendChild(explicacion);
     } else {
         botonSeleccionado.className = 'btn btn-danger';
@@ -193,7 +192,7 @@ async function cargarPregunta() {
 }
 
 function resetearContadores() {
-    if (confirm('¿Estas seguro de que quieres resetear tu puntuacion?')) {
+    if (confirm('¿Estás seguro de que quieres resetear?')) {
         correctas = 0;
         incorrectas = 0;
         localStorage.removeItem('triviaContadores');
@@ -201,7 +200,11 @@ function resetearContadores() {
     }
 }
 
+
 window.onload = () => {
+    console.log("Página cargada y función inicial ejecutada.");
+    
+    // Agregar botón de reset
     const resetBtn = document.createElement('button');
     resetBtn.className = 'btn btn-sm btn-outline-danger ms-3';
     resetBtn.textContent = 'Reset';

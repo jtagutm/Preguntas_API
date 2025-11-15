@@ -38,7 +38,3 @@ Aplicación web de trivia que genera preguntas aleatorias usando la API de Googl
 - HTML5
 - JavaScript
 - Google Gemini API
-
-## 📝 Licencia
-
-MIT

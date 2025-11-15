@@ -22,7 +22,7 @@ Aplicación web de trivia que genera preguntas aleatorias usando la API de Googl
 /
 ├── preguntas.html
 └── js/
-    └── scriptv2.js
+    └── script.js
 ```
 
 ## Uso
